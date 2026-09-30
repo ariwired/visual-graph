@@ -1,0 +1,89 @@
+# Internal project context
+docs/contexto/
+
+# Uploaded images and runtime storage
+backend/storage/
+data/uploads/
+
+# Neo4j local volumes 
+neo4j/data/
+neo4j/logs/
+neo4j/plugins/
+
+# Detector weights 
+weights/
+*.pt
+*.pth
+*.onnx
+*.safetensors
+
+# Generated benchmark and smoke-test output
+docs/testing/benchmark-*.json
+docs/testing/demo-smoke-*.txt
+
+
+# Secrets and environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+wheels/
+
+# Virtual environments
+.venv/
+venv/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+
+# Coverage
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+
+# Node / Frontend
+node_modules/
+frontend/dist/
+frontend/coverage/
+frontend/.vite/
+*.tsbuildinfo
+
+# Playwright
+playwright-report/
+test-results/
+blob-report/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editors and OS
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs and temporary files
+*.log
+logs/
+tmp/
+*.tmp
