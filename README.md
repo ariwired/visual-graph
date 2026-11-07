@@ -77,6 +77,15 @@ uv sync
 uv run pytest -m integration
 ```
 
+### Database schema
+
+Constraints and indexes are created idempotently (safe to run repeatedly):
+
+```bash
+cd backend
+uv run python -m visual_graph.graph
+```
+
 ## License
 
 This project is licensed under the MIT License.
