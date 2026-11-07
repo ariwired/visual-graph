@@ -54,6 +54,29 @@ OVERLAPS
 
 Future versions may explore image embeddings, vector search, semantic relationships, and hybrid visual search.
 
+## Local development
+
+### Neo4j
+
+Requirements: Docker with Compose, and [uv](https://docs.astral.sh/uv/) for the backend.
+
+```bash
+cp .env.example .env        # then set NEO4J_PASSWORD (.env is not versioned)
+docker compose up -d --wait # starts Neo4j and waits until it is healthy
+```
+
+* Neo4j Browser: <http://localhost:7474> (Connect URL `bolt://localhost:7687`, user/password from `.env`)
+* Data and logs are stored in `./neo4j/` (git-ignored). Stop with `docker compose down`;
+  reset the database with `docker compose down` followed by deleting `./neo4j/data`.
+
+Verify the backend can connect (needs the container running):
+
+```bash
+cd backend
+uv sync
+uv run pytest -m integration
+```
+
 ## License
 
 This project is licensed under the MIT License.
