@@ -86,6 +86,23 @@ cd backend
 uv run python -m visual_graph.graph
 ```
 
+### Sample scene graph
+
+Loads a small hand-made scene (person, dog, bicycle, two chairs) and is idempotent:
+
+```bash
+cd backend
+uv run python -m visual_graph.graph.seed
+```
+
+Then open <http://localhost:7474> and run:
+
+```cypher
+MATCH p=(:Image {id: "sample-street-1"})-[*1..2]->() RETURN p
+```
+
+The seed lives in `backend/src/visual_graph/graph/cypher/seed_sample_scene.cypher`.
+
 ## License
 
 This project is licensed under the MIT License.
